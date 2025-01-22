@@ -1,0 +1,12 @@
+---
+
+- hosts: debian
+  become: true
+  tasks:
+  - name: Update the  package cache
+    ansible.builtin.apt:
+      update_cache: true
+  - name: Install apache httpd  
+    ansible.builtin.apt:
+      name: apache2
+      state: latest
